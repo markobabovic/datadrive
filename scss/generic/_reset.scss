@@ -1,0 +1,154 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    padding: 0px;
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+body {
+    @include global-transition(opacity, 0.3s);
+    //opacity: 0;
+    overflow-x: hidden;
+    background-color: $secondary-color-2;
+
+    &.load-done {
+        opacity: 1;
+    }
+
+    &.menu-active {
+        overflow: hidden;
+
+        header.site-header {
+            .wrap-logo-nav {
+                .wrap-nav {
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: 20;
+                }
+            }
+        }
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.div-center {
+    display: block;
+    margin: 0 auto;
+    float: none;
+}
+
+.img-full {
+    width: 100%;
+}
+
+.fa, .fas, .far, .fal, .fab {
+    //font-family: fontAwesome;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin-top: 0;
+}
+
+a, a:focus, a:hover, a:active{
+    color: $text-color;
+    text-decoration: none;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: inherit;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: inherit;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: inherit;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: inherit;
+}
+
+
+.component-container {
+    width: calc(#{$desktop-container-width} + 40px);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, .page-heading {
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+
+    @media (max-width: $screen-sm-max){
+        font-size: 22px;
+    }
+}
+
+.page-heading {
+    @include flexbox;
+    @include align-items(center);
+    margin-bottom: 0;
+
+    @media (max-width: $screen-sm-max){
+        text-align: center;
+        display: block;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin-right: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+
+        &.sport-bet { background-image: url('../images/icon-sport_bet.svg'); }
+
+        @media (max-width: $screen-sm-max){
+            display: none;
+        }
+    }
+}

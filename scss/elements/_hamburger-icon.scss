@@ -1,0 +1,86 @@
+body.menu-active {
+	.hamburger-menu-icon {
+		z-index: 22;
+		
+		span {
+			width: 25px;
+			position: absolute;
+
+			@media (max-width: $screen-xs-max){
+				width: 25px;
+			}
+
+			&:nth-child(1) {
+				@include rotate(-45deg);
+				margin: 12px 0 0 -2px;
+
+				@media (max-width: $screen-xs-max){
+					margin: 9px 0 0 -2px;
+				}
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+
+			&:nth-child(3) {
+				@include rotate(45deg);
+				margin: 12px 0 0 -2px;
+
+				@media (max-width: $screen-xs-max){
+					margin: 9px 0 0 -2px;
+				}
+			}
+		}
+	}
+}
+
+.hamburger-menu-icon {
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+    right: 0;
+    z-index: 1;
+	display: none;
+	@include vertical-center;
+
+	@media (max-width: $screen-sm-max){
+		display: inline-block;
+	}
+
+	@media (max-width: $screen-xs-max){
+		width: 30px;
+		height: 30px;
+		// top:  21px;
+		// right: 11px;
+	}
+
+	span {
+		height: 1px;
+		width: 20px;
+		background-color: $text-color;
+		display: block;
+		margin: 7px 0;
+
+		@media (max-width: $screen-xs-max){
+			width: 20px;
+			height: 1px;
+			margin: 7px 0;
+		}
+
+		&:nth-child(1) {
+			margin-top: 0;
+		}
+
+		&:nth-child(2) {
+
+		}
+
+		&:nth-child(3) {
+			margin-bottom: 0;
+		}
+	}
+
+}
